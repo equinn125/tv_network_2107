@@ -17,8 +17,9 @@ class Show
   def highest_paid_actor
   if  @characters.first.salary > @characters.last.salary
     @characters.first.actor
+    #i know i need to use a enumerable here but was not hitting it right
   end
     #i KNOW THIS IS
   end
-  
+
 end
