@@ -37,4 +37,20 @@ RSpec.describe Show do
       knight_rider.add_character(kitt)
       expect(knight_rider.total_salary).to eq(2600000)
   end
+  it "can tell highest paid actor" do
+      kitt = Character.new({name: "KITT", actor: "William Daniels", salary: 1_000_000})
+      michael_knight = Character.new({name: "Michael Knight", actor: "David Hasselhoff", salary: 1_600_000})
+      knight_rider = Show.new("Knight Rider", "Glen Larson", [michael_knight, kitt])
+      knight_rider.add_character(michael_knight)
+      knight_rider.add_character(kitt)
+      expect(knight_rider.highest_paid_actor).to eq("David Hasselhoff")
+  end
+  it "can tell actors" do
+      kitt = Character.new({name: "KITT", actor: "William Daniels", salary: 1_000_000})
+      michael_knight = Character.new({name: "Michael Knight", actor: "David Hasselhoff", salary: 1_600_000})
+      knight_rider = Show.new("Knight Rider", "Glen Larson", [michael_knight, kitt])
+      knight_rider.add_character(michael_knight)
+      knight_rider.add_character(kitt)
+      expect(knight_rider.actors).to eq("David Hasselhoff", "William Daniels")
+  end
 end

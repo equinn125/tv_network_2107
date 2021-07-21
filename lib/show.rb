@@ -12,6 +12,13 @@ class Show
     @characters << character
   end
   def total_salary
-    @characters[salary].to_i
+    @characters.first.salary + @characters.last.salary
   end
+  def highest_paid_actor
+  if  @characters.first.salary > @characters.last.salary
+    @characters.first.actor
+  end
+    #i KNOW THIS IS
+  end
+  
 end
